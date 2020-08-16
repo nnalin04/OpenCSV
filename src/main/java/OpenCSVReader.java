@@ -9,12 +9,11 @@ public class OpenCSVReader {
     private static final String SAMPLE_CSV_FILE_PATH = "./users.csv";
 
     public static void main(String[] args) throws IOException {
-        try {
+        try (
             Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
-            CSVReader csvReader = new CSVReader(reader);
-        } {
+            CSVReader csvReader = new CSVReader(reader)
+        ) {
             String[] nextRecord;
-
             while ((nextRecord = csvReader.readNext()) != null) {
                 System.out.println("Name : " + nextRecord[0]);
                 System.out.println("Email : " + nextRecord[1]);
