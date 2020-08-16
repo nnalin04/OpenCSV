@@ -1,4 +1,5 @@
 import com.opencsv.CSVReader;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -7,12 +8,12 @@ import java.util.List;
 
 public class OpenCSVReader {
 
-    private static final String SAMPLE_CSV_FILE_PATH = "./users.csv";
+    private static final String SAMPLE_CSV_FILE_PATH = "D:\\Fellowship\\day-5\\OpenCSV\\src\\main\\resources\\users.csv";
 
     public static void main(String[] args) throws IOException {
         try (
-            Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
-            CSVReader csvReader = new CSVReader(reader)
+                Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
+                CSVReader csvReader = new CSVReader(reader)
         ) {
             //Reading records one by one in a String array
             String[] nextRecord;
