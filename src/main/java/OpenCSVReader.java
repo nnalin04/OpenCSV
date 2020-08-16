@@ -14,6 +14,7 @@ public class OpenCSVReader {
             CSVReader csvReader = new CSVReader(reader);
         } {
             String[] nextRecord;
+
             while ((nextRecord = csvReader.readNext()) != null) {
                 System.out.println("Name : " + nextRecord[0]);
                 System.out.println("Email : " + nextRecord[1]);
@@ -21,6 +22,7 @@ public class OpenCSVReader {
                 System.out.println("Country : " + nextRecord[3]);
                 System.out.println("==========================");
             }
+
         }
     }
 }
